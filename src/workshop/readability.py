@@ -15,6 +15,7 @@ def syllables(word: str) -> int:
 def plain_text(html: str) -> str:
     """Visible text of rendered HTML, one block per line, so headings and list items count as sentences."""
     html = re.sub(r"(?s)<(script|style|aside)\b.*?</\1>", " ", html)
+    html = re.sub(r"\s+", " ", html)  # line breaks inside a paragraph aren't sentence ends
     html = re.sub(r"</(p|li|h[1-6]|td|th|tr|dt|dd|blockquote)>", "\n", html)
     return re.sub(r"[ \t]+", " ", re.sub(r"<[^>]+>", " ", html))
 

@@ -1,0 +1,23 @@
+{
+ "fns_snap_standards_fy27": {
+  "title": "SNAP Cost-of-Living Adjustments: FY 2027 standards, allotments and deductions",
+  "publisher": "USDA Food and Nutrition Service",
+  "url": "https://www.fns.usda.gov/snap/allotment/cola",
+  "retrieved": "2026-10-22",
+  "official": true
+ },
+ "fns_bbce_chart": {
+  "title": "Broad-Based Categorical Eligibility (BBCE) state chart",
+  "publisher": "USDA Food and Nutrition Service",
+  "url": "https://www.fns.usda.gov/snap/broad-based-categorical-eligibility",
+  "retrieved": "2026-10-22",
+  "official": true
+ },
+ "hoodline_bbce": {
+  "title": "SNAP shakeup could put more food on Memphis tables (June 2026)",
+  "publisher": "Hoodline",
+  "url": "https://hoodline.com/2026/06/snap-shakeup-could-put-more-food-on-memphis-tables/",
+  "retrieved": "2026-10-22",
+  "official": false
+ }
+}
