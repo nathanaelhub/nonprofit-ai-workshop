@@ -66,6 +66,11 @@ body.slides main { max-width: none; padding: 0; }
 .deck-help { position: fixed; right: 12px; bottom: 8px; font-size: 0.8rem; color: var(--muted); }
 
 @media print {
+  /* Paper is always light, whatever the screen theme. */
+  :root, :root:not([data-theme="light"]), :root[data-theme="dark"] {
+    --bg: #fff; --surface: #fff; --ink: #000; --muted: #444; --line: #bbb;
+    --accent: #000; --accent-soft: #f1f1f1; --warn: #000; --warn-soft: #f6f0e6;
+  }
   @page { size: letter; margin: 0.6in; }
   @page deck { size: letter landscape; margin: 0.3in; }
   html { font-size: 11pt; }
