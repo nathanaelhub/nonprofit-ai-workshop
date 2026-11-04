@@ -37,9 +37,13 @@ Does it match what Claude said? What dates does the source say the number is goo
 
 Now read these two short quotes about Tennessee.
 
+**Quote 1**
+
 > **A news story, June 2026:** "the Tennessee Department of Human Services has adopted
 > broad-based categorical eligibility (BBCE). That move raises the SNAP gross-income threshold
 > from 130% to 200%"
+
+**Quote 2**
 
 > **The USDA's own list** of the states that use that rule (BBCE) does **not** include Tennessee.
 
