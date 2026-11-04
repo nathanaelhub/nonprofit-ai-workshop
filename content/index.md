@@ -21,6 +21,9 @@ Everything a facilitator needs is here, and every page prints on letter paper:
 | [Answer keys](handouts/index.md) | [Quiz](quiz.md), before and after |
 | [Quiz answers and tally sheet](tally.md) | [Takeaway](takeaway.md) and [feedback form](feedback.md) |
 
+**Looking for a group to run it with?** Send the one-page [host flyer](host.md) along with the
+[outreach email](https://github.com/nathanaelhub/nonprofit-ai-workshop/blob/main/docs/outreach-email.md).
+
 <p class="warn">This kit hasn't been run with real staff yet. If you run it, the quiz and feedback
 form are how we'll learn whether it works.</p>
 
