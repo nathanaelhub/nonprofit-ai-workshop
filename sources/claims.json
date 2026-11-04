@@ -1,28 +1,115 @@
 [
- {"id": "snap-gross-limit-4",
+ {
+  "id": "snap-gross-limit-4",
   "page": "keys/2-check.md",
   "says": "$3,575",
   "source": "fns_snap_standards_fy27",
-  "quote": "4 | $3,575 | $4,469 | $4,112 |"},
- {"id": "snap-fy27-dates",
+  "quote": "4 | $3,575 | $4,469 | $4,112 |"
+ },
+ {
+  "id": "snap-fy27-dates",
   "page": "keys/2-check.md",
   "says": "effective October 1, 2026, through September 30, 2027",
   "source": "fns_snap_standards_fy27",
-  "quote": "effective Oct. 1, 2026, through Sept. 30, 2027"},
- {"id": "snap-source-page",
+  "quote": "effective Oct. 1, 2026, through Sept. 30, 2027"
+ },
+ {
+  "id": "snap-source-page",
   "page": "handouts/2-check.md",
   "says": "fns.usda.gov/snap/allotment/cola",
   "source": "fns_snap_standards_fy27",
-  "quote": "Gross Monthly Income Limit (130% of Federal Poverty Level)"},
- {"id": "tn-bbce-news",
+  "quote": "Gross Monthly Income Limit (130% of Federal Poverty Level)"
+ },
+ {
+  "id": "tn-bbce-news",
   "page": "handouts/2-check.md",
   "says": "the Tennessee Department of Human Services has adopted broad-based categorical eligibility (BBCE). That move raises the SNAP gross-income threshold from 130% to 200%",
   "source": "hoodline_bbce",
-  "quote": "the Tennessee Department of Human Services has adopted broad-based categorical eligibility (BBCE). That move raises the SNAP gross-income threshold from 130% to 200%"},
- {"id": "tn-not-in-usda-bbce-list",
+  "quote": "the Tennessee Department of Human Services has adopted broad-based categorical eligibility (BBCE). That move raises the SNAP gross-income threshold from 130% to 200%"
+ },
+ {
+  "id": "tn-not-in-usda-bbce-list",
   "page": "handouts/2-check.md",
   "says": "does **not** include Tennessee",
   "source": "fns_bbce_chart",
   "quote": "States (46) | TANF/MOE Program Description",
-  "absent": "Tennessee"}
+  "absent": "Tennessee"
+ },
+ {
+  "id": "consumer-training-opt-in",
+  "page": "privacy.md",
+  "says": "You choose to allow us to use your chats and coding sessions to improve Claude",
+  "source": "anthropic_consumer_training",
+  "quote": "You choose to allow us to use your chats and coding sessions to improve Claude"
+ },
+ {
+  "id": "consumer-5-years",
+  "page": "privacy.md",
+  "says": "we may retain your data in a de-identified format for up to 5 years in our model training pipelines",
+  "source": "anthropic_consumer_retention",
+  "quote": "we may retain your data in a de-identified format for up to 5 years in our model training pipelines"
+ },
+ {
+  "id": "delete-history",
+  "page": "privacy.md",
+  "says": "Removed from your chat history immediately",
+  "source": "anthropic_consumer_retention",
+  "quote": "Removed from your chat history immediately"
+ },
+ {
+  "id": "delete-30-days",
+  "page": "privacy.md",
+  "says": "Deleted from our back-end storage systems within 30 days",
+  "source": "anthropic_consumer_retention",
+  "quote": "Deleted from our back-end storage systems within 30 days"
+ },
+ {
+  "id": "incognito",
+  "page": "privacy.md",
+  "says": "Your Incognito chats are not used to improve Claude",
+  "source": "anthropic_consumer_training",
+  "quote": "Your Incognito chats are not used to improve Claude"
+ },
+ {
+  "id": "commercial-default",
+  "page": "privacy.md",
+  "says": "By default, we will not use your inputs or outputs from our commercial products (e.g. Claude for Work, Anthropic API, Claude Gov, etc.) to train our models",
+  "source": "anthropic_commercial_training",
+  "quote": "By default, we will not use your inputs or outputs from our commercial products (e.g. Claude for Work, Anthropic API, Claude Gov, etc.) to train our models"
+ },
+ {
+  "id": "feedback-commercial",
+  "page": "privacy.md",
+  "says": "When you provide us feedback via our thumbs up/down button, we will store the entire related conversation",
+  "source": "anthropic_commercial_training",
+  "quote": "When you provide us feedback via our thumbs up/down button, we will store the entire related conversation"
+ },
+ {
+  "id": "feedback-commercial-5y",
+  "page": "privacy.md",
+  "says": "for up to 5 years",
+  "source": "anthropic_commercial_training",
+  "quote": "in our secured back-end for up to 5 years"
+ },
+ {
+  "id": "feedback-consumer",
+  "page": "privacy.md",
+  "says": "the thumbs up and down buttons send the whole chat",
+  "source": "anthropic_consumer_training",
+  "quote": "When you provide us feedback via our thumbs up/down button, we will store the entire related conversation"
+ },
+ {
+  "id": "feedback-consumer-5y",
+  "page": "privacy.md",
+  "says": "for up to 5 years",
+  "source": "anthropic_consumer_training",
+  "quote": "in our secured back-end for up to 5 years"
+ },
+ {
+  "id": "work-plan-includes-team-enterprise",
+  "page": "privacy.md",
+  "says": "Claude for Work, which includes Team and Enterprise",
+  "source": "anthropic_commercial_training",
+  "quote": "As a Primary Owner or Owner of a Team or Enterprise plan"
+ }
 ]

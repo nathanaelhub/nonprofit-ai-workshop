@@ -3,21 +3,42 @@
   "title": "SNAP Cost-of-Living Adjustments: FY 2027 standards, allotments and deductions",
   "publisher": "USDA Food and Nutrition Service",
   "url": "https://www.fns.usda.gov/snap/allotment/cola",
-  "retrieved": "2026-10-22",
+  "retrieved": "2026-11-03",
   "official": true
  },
  "fns_bbce_chart": {
   "title": "Broad-Based Categorical Eligibility (BBCE) state chart",
   "publisher": "USDA Food and Nutrition Service",
   "url": "https://www.fns.usda.gov/snap/broad-based-categorical-eligibility",
-  "retrieved": "2026-10-22",
+  "retrieved": "2026-11-03",
   "official": true
  },
  "hoodline_bbce": {
   "title": "SNAP shakeup could put more food on Memphis tables (June 2026)",
   "publisher": "Hoodline",
   "url": "https://hoodline.com/2026/06/snap-shakeup-could-put-more-food-on-memphis-tables/",
-  "retrieved": "2026-10-22",
+  "retrieved": "2026-11-03",
   "official": false
+ },
+ "anthropic_consumer_training": {
+  "title": "Is my data used for model training? (consumer plans: Free, Pro, Max)",
+  "publisher": "Anthropic Privacy Center",
+  "url": "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training",
+  "retrieved": "2026-11-03",
+  "official": true
+ },
+ "anthropic_consumer_retention": {
+  "title": "How long do you store my data? (consumer plans: Free, Pro, Max)",
+  "publisher": "Anthropic Privacy Center",
+  "url": "https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data",
+  "retrieved": "2026-11-03",
+  "official": true
+ },
+ "anthropic_commercial_training": {
+  "title": "Is my data used for model training? (commercial products: Claude for Work, API)",
+  "publisher": "Anthropic Privacy Center",
+  "url": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training",
+  "retrieved": "2026-11-03",
+  "official": true
  }
 }
