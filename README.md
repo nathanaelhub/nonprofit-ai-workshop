@@ -32,7 +32,8 @@ The four exercises:
 4. **When not to use it.** Ten task cards sorted into "good use", "use with a check" and "don't
    use", from a volunteer thank-you note to a reply to someone in crisis.
 
-The design and its reasons are in the [spec](docs/spec.md).
+The design and its reasons are in the [spec](docs/spec.md). To find a group to host it: a
+one-page [host flyer](content/host.md) and an [outreach email](docs/outreach-email.md).
 
 ## How it stays accurate
 
