@@ -10,6 +10,8 @@ audience: attendee
 You answer the email for a small nonprofit that helps people pay utility bills. Three emails came
 in this morning. Everyone and everything in them is made up.
 
+**Email 1**
+
 > **From:** Marisol Ventura &lt;mventura@example.org&gt;
 >
 > Hi, my name is Marisol Ventura and I live at 418 Larkin Ave, Apt 3. My light bill is two months
@@ -17,10 +19,14 @@ in this morning. Everyone and everything in them is made up.
 > two kids, Leo (6) and Ana (3), and Ana has asthma so we need the power for her breathing machine.
 > My birthday is 3/9/1991 if you need it. Please help.
 
+**Email 2**
+
 > **From:** Dale Whitcomb &lt;dwhitcomb@example.org&gt;
 >
 > I got out of the hospital last week after heart surgery and I can't work for a while. I'm behind
 > on my gas bill by $286. My caseworker at the county is Ms. Okafor. My phone is 555-0142.
+
+**Email 3**
 
 > **From:** Grace Lindqvist &lt;glindqvist@example.org&gt;
 >

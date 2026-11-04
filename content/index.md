@@ -12,9 +12,14 @@ A one-hour workshop for nonprofit staff who don't write code. It teaches four ha
 4. **Know when not to use it.** Decisions about a person's eligibility, safety or legal standing
    stay with people.
 
-Everything a facilitator needs is here: a minute-by-minute guide, slides, handouts with answer
-keys, a one-page privacy sheet, a quiz to give before and after, and a feedback form. Every page
-prints on letter paper.
+Everything a facilitator needs is here, and every page prints on letter paper:
+
+| For the facilitator | For attendees |
+|---|---|
+| [Facilitator guide](facilitator.md): the hour, minute by minute | [Handouts](handouts/index.md) for the four exercises |
+| [Slides](slides.md) with speaker notes (press N) | [Privacy sheet](privacy.md) |
+| [Answer keys](handouts/index.md) | [Quiz](quiz.md), before and after |
+| [Quiz answers and tally sheet](tally.md) | [Takeaway](takeaway.md) and [feedback form](feedback.md) |
 
 <p class="warn">This kit hasn't been run with real staff yet. If you run it, the quiz and feedback
 form are how we'll learn whether it works.</p>
