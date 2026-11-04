@@ -42,9 +42,11 @@ use. You can type this, or write your own:
 
 1. In each answer, **circle every number.** Find each one in the report. Mark any number that
    isn't there.
-2. Underline any claim the report doesn't support, like "we ended hunger in our area" or "a
+2. If Claude left blanks like "[X] households", what would you fill them with? Where would you
+   get the number?
+3. Underline any claim the report doesn't support, like "we ended hunger in our area" or "a
    30 percent rise".
-3. Which answer would you send to the fund? What would you still change?
+4. Which answer would you send to the fund? What would you still change?
 
 **What to take away:** the more Claude knows about who it's writing for and what facts to use,
 the less you have to fix. You still check every number before it goes out.

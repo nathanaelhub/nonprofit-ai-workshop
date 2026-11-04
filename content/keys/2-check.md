@@ -25,12 +25,21 @@ and a test fails if the cached source no longer has this row.
 
 ## What usually happens
 
-Claude's training stops at a date, so it often gives the figure from an earlier year (the
-FY 2026 figure was lower) without saying which year it's for. Sometimes it gets the current figure.
-Either way, the lesson is the same: you found the source and its dates, and now you know. If
-Claude says it isn't sure and points to the USDA, praise that; it's the right behavior.
+On the [November 3, 2026 check run](https://github.com/nathanaelhub/nonprofit-ai-workshop/blob/main/checks/results/2026-11-03/summary.md)
+(Claude Sonnet, three times, no web search), Claude was careful:
 
-The facilitator guide shows what Claude said on the most recent check run.
+- Every time, it gave last year's limit, **$3,483**, and labeled it as the figure for fiscal year
+  2026.
+- Twice it added "about $3,575" for the new year and called it an estimate. Once it said it
+  couldn't give a reliable new number.
+- Every time, it said to check the USDA or the state SNAP agency.
+
+So Claude didn't get it wrong, exactly. But a pair now has two numbers, one of them a guess, and
+only the source settles which to use. That's the lesson. If Claude on the day gives one confident
+number with no year, that's the lesson too: ask "for what dates?"
+
+On claude.ai, Claude may search the web and find the current table. Then ask: "How would you know
+that page is the official one?"
 
 ## The Tennessee conflict
 

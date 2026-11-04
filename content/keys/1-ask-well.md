@@ -10,15 +10,21 @@ audience: facilitator
 
 ## What usually happens
 
-- **Round 1** gives a warm, generic paragraph. Claude doesn't know the pantry, so it either uses
-  placeholders ("[number] families") or, more of a problem, writes believable numbers and results
-  that aren't real ("served over 2,000 families", "reduced food insecurity in our community").
-- **Round 2** usually sticks to the report's numbers. Watch for small drifts that still need a
-  check: rounding ("nearly 4,000 people" for 3,912 is fine; "over 4,000" is not), arithmetic
-  ("about 41 hours per volunteer" is right, but it isn't in the report, so someone has to check it),
-  and claims about effects ("ensuring no child went hungry") that the report doesn't make.
+On the [November 3, 2026 check run](https://github.com/nathanaelhub/nonprofit-ai-workshop/blob/main/checks/results/2026-11-03/summary.md)
+(Claude Sonnet, each request three times):
 
-The facilitator guide shows what Claude actually wrote on the most recent check run.
+- **Round 1:** Claude didn't make up numbers. All three times it wrote a paragraph full of blanks,
+  like "[X] households" and "[measurable outcome, e.g., a 20% increase in households served]", and
+  asked for the real details. The risk moves to the person: someone in a hurry fills the blanks
+  from memory, or leaves the example "20% increase" in.
+- **Round 2:** all three answers used only the report's numbers. One added a reason the report
+  doesn't give: the new Saturday hours were "for families who cannot visit during the week."
+  That's the kind of sentence pairs should underline. It may be true, but nobody checked.
+
+Answers on the day can differ: claude.ai has its own settings, and models change. Watch for
+rounding ("over 4,000 people" for 3,912 is wrong; "nearly 4,000" is fine), arithmetic ("about 41
+hours per volunteer" is right, but now someone has to check it), and effects the report doesn't
+claim ("ensuring no child went hungry").
 
 ## Every number in the report
 
@@ -38,5 +44,6 @@ source.
 
 - **No internet or Claude is down:** hand out the printed sample answers from the latest check run
   and do the "compare" step on paper.
-- **Round 1 comes back with placeholders, not made-up numbers:** that's a good lesson too. Ask,
-  "What would happen if you were in a hurry and filled these in from memory?"
+- **Round 1 comes back with real-looking numbers instead of blanks:** even better for the lesson.
+  Have pairs find where each number came from. (It can't have come from the pantry; Claude never saw
+  the report.)
