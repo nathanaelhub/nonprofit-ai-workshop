@@ -32,3 +32,38 @@ def test_every_email_sender_is_fictional_and_uses_example_org():
         assert addr.endswith("@example.org"), addr
     for name in fictional["people"] + fictional["organizations"]:
         assert name in all_text, f"{name} is listed as fictional but not used"
+
+
+def test_every_quote_on_the_privacy_sheet_is_in_a_cached_source():
+    page = (CONTENT / "privacy.md").read_text(encoding="utf-8")
+    section = page.split("## What Anthropic says", 1)[1].split("\n## ", 1)[0]
+    section = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", section))
+    sources = [norm(text(s)) for s in manifest()]
+    quotes = re.findall(r'"([^"]{20,})"', section)
+    assert len(quotes) >= 6, "found too few quotes; the pattern is broken"
+    for q in quotes:
+        for part in q.split("..."):
+            if part.strip():
+                assert any(norm(part) in s for s in sources), part
+
+
+def test_extract_keeps_table_rows_and_drops_scripts():
+    from workshop.sources import extract
+    page = "<html><script>x=1</script><main><h2>Limits</h2><table><tr><td>4</td><td>$3,575</td></tr></table></main></html>"
+    out = extract(page)
+    assert "x=1" not in out and norm("4 | $3,575") in norm(out)
+
+
+def test_dates_the_pages_say_sources_were_checked_match_the_manifest():
+    import datetime
+    retrieved = {e["retrieved"] for e in manifest().values()}
+    found = 0
+    for p in CONTENT.rglob("*.md"):
+        t = p.read_text(encoding="utf-8").replace("*", "")
+        for d in re.findall(r"checked (?:on )?(\d{4}-\d{2}-\d{2})", t):
+            found += 1
+            assert d in retrieved, f"{p.name} says checked {d}"
+        for d in re.findall(r"checked (?:on )?([A-Z][a-z]+ \d{1,2}, \d{4})", t):
+            found += 1
+            assert datetime.datetime.strptime(d, "%B %d, %Y").date().isoformat() in retrieved, f"{p.name} says checked {d}"
+    assert found >= 3

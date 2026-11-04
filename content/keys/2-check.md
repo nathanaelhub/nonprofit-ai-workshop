@@ -10,7 +10,7 @@ audience: facilitator
 
 ## The official answer
 
-From the USDA Food and Nutrition Service's FY 2027 cost-of-living page (checked 2026-10-22):
+From the USDA Food and Nutrition Service's FY 2027 cost-of-living page (checked 2026-11-03):
 the gross monthly income limit for a household of 4 in the 48 states and DC is **$3,575**,
 130% of the poverty line, **effective October 1, 2026, through September 30, 2027**.
 
@@ -39,7 +39,7 @@ This is real, found while building a benefits screener in October 2026:
 - A June 2026 news story (Hoodline) says Tennessee adopted "broad-based categorical eligibility",
   raising the gross limit from 130% to 200% of poverty. For four people, 200% is about $5,500 a
   month.
-- The USDA's own BBCE state chart (checked 2026-10-22) does not list Tennessee.
+- The USDA's own BBCE state chart (checked 2026-11-03) does not list Tennessee.
 - No official Tennessee document we could find confirms the change or its start date.
 
 So the honest answer is "we don't know yet." Good answers from the room:
