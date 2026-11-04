@@ -1,0 +1,5 @@
+{
+ "note": "Every person and organization named in the exercises is made up. Tests check that each named email sender is on this list and that every email address uses example.org.",
+ "people": ["Marisol Ventura", "Leo", "Ana", "Dale Whitcomb", "Ms. Okafor", "Grace Lindqvist"],
+ "organizations": ["Harbor Street Food Pantry", "Fairview Family Fund"]
+}

@@ -53,3 +53,9 @@ def test_relative_md_links_become_html_links(site):
 
 def test_content_dir_exists():
     assert (CONTENT / "index.md").exists()
+
+
+def test_a_wrapped_paragraph_is_one_sentence():
+    one_line = "<p>" + "The volunteers at the pantry gave many hours of their time this quarter " * 3 + "today.</p>"
+    wrapped = one_line.replace(" of ", "\nof ")
+    assert grade(plain_text(wrapped)) == grade(plain_text(one_line))
