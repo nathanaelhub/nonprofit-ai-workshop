@@ -4,8 +4,9 @@ A ready-to-run, one-hour workshop that teaches non-technical nonprofit staff to 
 carefully: how to ask well, how to check an answer before using it, what never to paste in,
 and when not to use it at all.
 
-**Status:** being designed. The plan is in [`docs/spec.md`](docs/spec.md) once its pull
-request is merged.
+**Live site:** https://nathanaelhub.github.io/nonprofit-ai-workshop/
+
+**Status:** being built from the approved [spec](docs/spec.md). Not yet run with real staff.
 
 Not affiliated with Anthropic.
 
@@ -18,5 +19,9 @@ Not affiliated with Anthropic.
 
 ```bash
 uv sync
-uv run pytest
+uv run pytest            # links resolve, attendee pages read at grade 8 or below, ...
+uv run workshop build    # -> _site/, open _site/index.html
 ```
+
+Pages are Markdown files in `content/`; GitHub Pages rebuilds the site from `main` after the
+tests pass.
