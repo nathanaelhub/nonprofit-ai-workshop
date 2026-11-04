@@ -49,3 +49,10 @@ def test_claude_output_quoted_in_the_keys_is_in_the_saved_run():
     for path, quotes in quoted.items():
         for q in quotes:
             assert norm(q) in page(path) and norm(q) in answers, q
+
+
+def test_check_uses_the_snap_figure_the_answer_key_cites():
+    from workshop.check import SNAP_LIMIT_4
+    from workshop.sources import claims
+    says = next(c["says"] for c in claims() if c["id"] == "snap-gross-limit-4")
+    assert says == f"${SNAP_LIMIT_4:,}"
