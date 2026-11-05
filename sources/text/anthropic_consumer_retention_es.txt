@@ -1,0 +1,51 @@
+Este artículo trata sobre nuestros productos de consumidor como Claude Free, Pro, Max y cuándo las cuentas de esos planes utilizan Claude Code. Para nuestros productos comerciales como Claude for Work y la API de Anthropic, consulta 
+aquí
+.
+Anthropic retiene tus datos personales durante el tiempo que sea razonablemente necesario para los propósitos y criterios descritos en nuestra 
+Política de Privacidad
+.
+Período de Retención Estándar
+Control de Tus Conversaciones
+Controlas tus conversaciones con Claude y puedes 
+eliminar tus conversaciones
+ en cualquier momento. Cuando eliminas una conversación:
+Se elimina de tu historial de chat inmediatamente
+Se borra de nuestros sistemas de almacenamiento en 30 días
+Si Nos Autorizas a Usar Tus Datos para Mejorar Claude
+Si nos autorizas a usar tus chats o sesiones de codificación para mejorar Claude, podemos retener tus datos en un formato desidentificado hasta 5 años en nuestros pipelines de entrenamiento de modelos. Este período de retención solo se aplica a chats nuevos o reanudados después de que se haya habilitado la configuración de entrenamiento de modelos. Puedes obtener más información sobre cómo se entrenan nuestros modelos 
+aquí
+.
+Puedes cambiar tus configuraciones de privacidad con respecto al entrenamiento de modelos en cualquier momento siguiendo estos pasos 
+aquí
+.
+Si decides desactivar la configuración de mejora de modelos, no usaremos tus chats anteriores o nuevos ni sesiones de codificación para futuro entrenamiento de modelos. Además, si eliminas un chat de tu historial de chat, no se utilizará para entrenar modelos futuros. Tus datos seguirán siendo incluidos en ejecuciones de entrenamiento de modelos que ya están en progreso, o en modelos que ya han sido entrenados.
+Tus chats en modo Incógnito no se utilizan para mejorar Claude, incluso si has habilitado Mejora de Modelos en tu 
+Configuración de Privacidad
+. 
+Obtén más información
+ sobre chats en modo Incógnito.
+​
+Violaciones de la Política de Uso
+Retenemos entradas y salidas hasta 2 años y puntuaciones de clasificación de confianza y seguridad hasta 7 años si tu chat o sesión es marcado por nuestros sistemas automatizados de confianza y seguridad como violación de nuestra 
+Política de Uso
+.
+En todos los casos, podemos retener chats y sesiones de codificación según lo requerido por la ley, para resolver disputas, o según sea necesario para combatir violaciones de nuestra Política de Uso.
+​
+Datos de Retroalimentación
+Cuando has proporcionado retroalimentación (por ejemplo, enviando retroalimentación a través de nuestro botón de pulgar hacia arriba/abajo o reportes de errores), retenemos datos asociados con esa presentación durante 5 años. 
+Obtén más información
+.
+Información Adicional
+Podemos anonimizar o desidentificar tus datos personales para propósitos de investigación o estadísticos, en cuyo caso podemos retener esta información por más tiempo.
+En todos los casos, podemos retener chats y sesiones de codificación según lo requerido por la ley, para resolver disputas, o según sea necesario para combatir violaciones de nuestra Política de Uso.
+Para más información sobre nuestras prácticas de privacidad, consulta nuestro 
+Centro de Confianza
+ y 
+Política de Privacidad
+.
+Artículos relacionados
+¿Cuánto tiempo almacenas los datos de mi organización?
+¿Cómo utilizas datos personales en el entrenamiento de modelos?
+¿Cómo se utilizan los datos personales en el entrenamiento de modelos?
+¿Se utilizan mis datos para el entrenamiento del modelo?
+¿Cómo cambio mi configuración de privacidad de mejora del modelo?

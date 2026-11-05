@@ -25,7 +25,7 @@ def test_every_source_is_listed_with_a_url_and_date():
 def test_every_email_sender_is_fictional_and_uses_example_org():
     fictional = json.loads((DIR / "fictional.json").read_text(encoding="utf-8"))
     all_text = "\n".join(p.read_text(encoding="utf-8") for p in CONTENT.rglob("*.md"))
-    senders = re.findall(r"\*\*From:\*\* ([^&<]+?) &lt;", all_text)
+    senders = re.findall(r"\*\*(?:From|De):\*\* ([^&<]+?) &lt;", all_text)
     assert senders, "found no email senders; the pattern is broken"
     assert set(senders) <= set(fictional["people"])
     for addr in re.findall(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+", all_text):
@@ -34,9 +34,14 @@ def test_every_email_sender_is_fictional_and_uses_example_org():
         assert name in all_text, f"{name} is listed as fictional but not used"
 
 
-def test_every_quote_on_the_privacy_sheet_is_in_a_cached_source():
-    page = (CONTENT / "privacy.md").read_text(encoding="utf-8")
-    section = page.split("## What Anthropic says", 1)[1].split("\n## ", 1)[0]
+import pytest
+
+
+@pytest.mark.parametrize("path,heading", [("privacy.md", "## What Anthropic says"),
+                                          ("es/privacy.md", "## Lo que dice Anthropic")])
+def test_every_quote_on_the_privacy_sheet_is_in_a_cached_source(path, heading):
+    page = (CONTENT / path).read_text(encoding="utf-8")
+    section = page.split(heading, 1)[1].split("\n## ", 1)[0]
     section = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", section))
     sources = [norm(text(s)) for s in manifest()]
     quotes = re.findall(r'"([^"]{20,})"', section)
@@ -54,6 +59,10 @@ def test_extract_keeps_table_rows_and_drops_scripts():
     assert "x=1" not in out and norm("4 | $3,575") in norm(out)
 
 
+MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+         "octubre", "noviembre", "diciembre"]
+
+
 def test_dates_the_pages_say_sources_were_checked_match_the_manifest():
     import datetime
     retrieved = {e["retrieved"] for e in manifest().values()}
@@ -66,4 +75,8 @@ def test_dates_the_pages_say_sources_were_checked_match_the_manifest():
         for d in re.findall(r"checked (?:on )?([A-Z][a-z]+ \d{1,2}, \d{4})", t):
             found += 1
             assert datetime.datetime.strptime(d, "%B %d, %Y").date().isoformat() in retrieved, f"{p.name} says checked {d}"
-    assert found >= 3
+        for day, month, year in re.findall(r"revisadas el (\d{1,2}) de ([a-z]+) de (\d{4})", t):
+            found += 1
+            iso = f"{year}-{MESES.index(month) + 1:02d}-{int(day):02d}"
+            assert iso in retrieved, f"{p.name} says revisadas {iso}"
+    assert found >= 4

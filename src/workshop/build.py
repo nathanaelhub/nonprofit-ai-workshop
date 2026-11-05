@@ -5,6 +5,7 @@ Every page is a Markdown file in content/ with a short header:
     ---
     title: Exercise 1: Ask well
     audience: attendee        # attendee pages must read at grade 8 or below
+    lang: es                  # optional; Spanish pages get Spanish navigation and readability rules
     ---
 
 Links between pages are written to the .md files (so they work on GitHub too) and
@@ -27,7 +28,12 @@ CONTENT = ROOT / "content"
 ASSETS = ROOT / "site"
 
 NAV = [("index.md", "Home"), ("facilitator.md", "Facilitator guide"), ("slides.md", "Slides"),
-       ("handouts/index.md", "Handouts"), ("privacy.md", "Privacy sheet")]
+       ("handouts/index.md", "Handouts"), ("privacy.md", "Privacy sheet"), ("es/index.md", "Español")]
+NAV_ES = [("es/index.md", "Inicio"), ("es/slides.md", "Diapositivas"), ("es/handouts/index.md", "Hojas de trabajo"),
+          ("es/privacy.md", "Privacidad"), ("index.md", "English")]
+SITE_NAME = {"en": "Using Claude at a Nonprofit", "es": "Cómo usar Claude en una organización sin fines de lucro"}
+FOOTER = {"en": "A one-hour workshop kit. Not affiliated with Anthropic. MIT license.",
+          "es": "Un taller de una hora. No está afiliado con Anthropic. Licencia MIT."}
 
 
 @dataclass
@@ -43,6 +49,10 @@ class Page:
     @property
     def audience(self) -> str:
         return self.meta.get("audience", "facilitator")
+
+    @property
+    def lang(self) -> str:
+        return self.meta.get("lang", "en")
 
     @property
     def out(self) -> Path:
@@ -81,28 +91,29 @@ def slides_html(page: Page) -> str:
 
 def render(page: Page) -> str:
     up = "../" * (len(page.path.parts) - 1)
+    lang = page.lang
     nav = " ".join(f'<a href="{up}{p[:-3]}.html"{" aria-current=page" if Path(p) == page.path else ""}>{label}</a>'
-                   for p, label in NAV if (CONTENT / p).exists())
-    is_slides = page.path == Path("slides.md")
+                   for p, label in (NAV_ES if lang == "es" else NAV) if (CONTENT / p).exists())
+    is_slides = page.path.name == "slides.md"
     body = slides_html(page) if is_slides else md_to_html(page.body)
     script = f'<script src="{up}slides.js"></script>' if is_slides else ""
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(page.title)} · Using Claude at a Nonprofit</title>
+<title>{html.escape(page.title)} · {SITE_NAME[lang]}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
 <link rel="stylesheet" href="{up}style.css">
 </head>
 <body class="{'slides' if is_slides else page.audience}">
-<header class="site"><a class="brand" href="{up}index.html">Using Claude at a Nonprofit</a><nav>{nav}</nav></header>
+<header class="site"><a class="brand" href="{up}{"es/" if lang == "es" else ""}index.html">{SITE_NAME[lang]}</a><nav>{nav}</nav></header>
 <main>
 {body}
 </main>
-<footer class="site">A one-hour workshop kit. Not affiliated with Anthropic. MIT license.
-<a href="https://github.com/nathanaelhub/nonprofit-ai-workshop">Source</a></footer>
+<footer class="site">{FOOTER[lang]}
+<a href="https://github.com/nathanaelhub/nonprofit-ai-workshop">{"Código" if lang == "es" else "Source"}</a></footer>
 {script}
 </body>
 </html>

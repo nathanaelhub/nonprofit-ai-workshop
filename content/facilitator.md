@@ -107,6 +107,27 @@ ask about the organization's AI policy.
 3. Send the tallies and a summary of the feedback (no names) to the kit's maintainer, or add them
    to the repo under `pilots/`. That's how this kit gets evidence that it works.
 
+## Running it in Spanish
+
+Everything attendees see is also in Spanish: the [handouts](es/handouts/index.md), the
+[privacy sheet](es/privacy.md), the [quiz](es/quiz.md), the [takeaway](es/takeaway.md), the
+[feedback form](es/feedback.md) and the [slides](es/slides.md). The privacy sheet quotes
+Anthropic's own Spanish Privacy Center pages. This guide and the answer keys stay in English.
+
+What Claude did with the Spanish prompts on the
+[November 4, 2026 check](https://github.com/nathanaelhub/nonprofit-ai-workshop/blob/main/checks/results/2026-11-04/summary.md)
+(three runs each) matched English: blanks in round 1 of Exercise 1 and only the report's numbers in
+round 2; for SNAP, last year's $3,483 with $3,575 called an estimate (2 of 3) and a pointer to the
+USDA or the state agency (3 of 3); a reply to the pasted email used the client's and her child's
+names. Things to know:
+
+- **The USDA page is in English.** Help pairs find the "Gross Monthly Income Limit" table and the
+  row for 4.
+- **The news quote in Exercise 2 is translated**, and the handout says so.
+- **The Spanish was written with Claude's help and hasn't been reviewed by a native speaker.**
+  Have someone fluent read the handouts before the first Spanish session, and fix anything that
+  reads awkwardly.
+
 ## What people ask
 
 - **"Is Claude listening to everything?"** Point to the privacy sheet: it quotes what Anthropic

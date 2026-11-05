@@ -32,6 +32,12 @@ The four exercises:
 4. **When not to use it.** Ten task cards sorted into "good use", "use with a check" and "don't
    use", from a volunteer thank-you note to a reply to someone in crisis.
 
+**En español:** every attendee page, the slides and the host flyer are also in Spanish
+([content/es/](content/es/)), with the privacy sheet quoting Anthropic's Spanish Privacy Center.
+Spanish pages are held to a readability score instead of a grade level (Szigriszt-Pazos on the
+INFLESZ scale, at least 65, "fairly easy"; they score 70.8 to 85.0). Not yet reviewed by a native
+speaker.
+
 The design and its reasons are in the [spec](docs/spec.md). To find a group to host it: a
 one-page [host flyer](content/host.md) and an [outreach email](docs/outreach-email.md).
 
