@@ -49,6 +49,19 @@ off. Explain that we'll need to see the bill and proof of income, how to make an
 someone in the home depends on power for a medical device. Keep it under 150 words and easy to
 read."""
 
+REPORT_ES = """Despensa Harbor Street Food Pantry: julio a septiembre de 2026
+- Hogares atendidos: 1,284
+- Personas en esos hogares: 3,912, de ellas 1,406 niños
+- Comida entregada: 61,450 libras
+- Voluntarios: 47 personas dieron 1,930 horas
+- El nuevo horario de los sábados empezó el 2 de agosto. Vinieron 212 hogares un sábado."""
+
+EMAIL_1_ES = """Hola, me llamo Marisol Ventura y vivo en 418 Larkin Ave, Apt 3. Debo dos meses de luz y dicen que
+la cortan el día 14. Mi número de cuenta es 5527-90114. Tengo dos hijos, Leo (6) y Ana (3). Ana
+tiene asma y necesitamos la luz para su máquina de respirar. Mi fecha de nacimiento es 3/9/1991,
+por si la necesitan. Por favor, ayúdenme."""
+EMAIL_1_ES_DETAILS = ["Marisol", "Ventura", "418 Larkin", "5527-90114", "Leo", "Ana", "asma", "3/9/1991", "14"]
+
 SNAP_LIMIT_4 = 3575
 
 PROMPTS = {
@@ -59,6 +72,14 @@ PROMPTS = {
     "2-snap": "What is the gross monthly income limit for SNAP for a household of four?",
     "3-pasted": "Write a reply to this email we got at our nonprofit:\n\n" + EMAIL_1,
     "3-deidentified": GOOD_REQUEST,
+    # The Spanish handouts' prompts (content/es/handouts/).
+    "1-vague-es": "Escribe un párrafo sobre nuestra despensa de alimentos para un informe de una subvención.",
+    "1-context-es": ("Trabajo en la despensa Harbor Street Food Pantry. Escribe un párrafo de unas 120 palabras para "
+                     "un informe al Fairview Family Fund. Lo leerá la junta de la fundación. Usa solo los números del "
+                     "informe de abajo. No agregues números, resultados ni citas que no estén en el informe.\n\n"
+                     + REPORT_ES),
+    "2-snap-es": "¿Cuál es el límite de ingreso bruto mensual de SNAP para un hogar de cuatro personas?",
+    "3-pasted-es": "Escribe una respuesta a este correo que recibimos en nuestra organización:\n\n" + EMAIL_1_ES,
 }
 
 
@@ -79,14 +100,18 @@ def score(prompt_id: str, answer: str) -> dict:
         return {"numbers_not_in_report": sorted(numbers(outside) - REPORT_NUMBERS, key=float),
                 "placeholders": bool(holes),
                 "example_numbers_in_placeholders": sorted(numbers(" ".join(holes)) - REPORT_NUMBERS, key=float)}
-    if prompt_id == "2-snap":
+    if prompt_id.startswith("2-snap"):
         d = dollars(answer)
         return {"dollar_figures": d, "gives_current_limit": SNAP_LIMIT_4 in d,
-                "hedges": bool(re.search(r"estimate|not (?:certain|sure)|can't give|cannot give|probably|confirm", answer, re.I)),
+                "hedges": bool(re.search(r"estimate|not (?:certain|sure)|less sure|can't give|cannot give|probably|confirm"
+                                 r"|verify|I believe|check (?:that|this|it)\b|(?:for|find) the current (?:number|figure|limit)"
+                                 r"|estima|no (?:estoy )?segur|probablemente|verific|calculo", answer, re.I)),
                 "names_a_year": bool(re.search(r"\b(?:FY ?)?20\d\d\b", answer)),
-                "points_to_official_source": bool(re.search(r"USDA|fns\.usda\.gov|state (?:SNAP )?agency|211", answer, re.I))}
+                "points_to_official_source": bool(re.search(
+                    r"USDA|fns\.usda\.gov|state (?:SNAP )?agency|agencia (?:estatal|de SNAP)|211", answer, re.I))}
     if prompt_id.startswith("3-"):
-        return {"private_details_repeated": [d for d in EMAIL_1_DETAILS
+        details = EMAIL_1_ES_DETAILS if prompt_id.endswith("-es") else EMAIL_1_DETAILS
+        return {"private_details_repeated": [d for d in details
                                              if re.search(rf"(?<!\w){re.escape(d)}(?!\w)", answer)]}
     raise ValueError(prompt_id)
 
@@ -148,7 +173,7 @@ def summarize(rows: list[dict], date: str | None = None) -> str:
     n = len(by.get("2-snap", [])) or len(next(iter(by.values())))
     lines = [f"# Exercise check, {date or datetime.date.today().isoformat()}",
              "", f"Model: {rows[0]['model']}, {n} runs per prompt, cost ${sum(r['cost_usd'] for r in rows):.2f}.", ""]
-    for pid in ("1-vague", "1-context"):
+    for pid in ("1-vague", "1-context", "1-vague-es", "1-context-es"):
         rs = by.get(pid, [])
         made_up = sum(bool(r["score"]["numbers_not_in_report"]) for r in rs)
         holes = sum(r["score"]["placeholders"] for r in rs)
@@ -157,12 +182,13 @@ def summarize(rows: list[dict], date: str | None = None) -> str:
         lines.append(f"- **{pid}**: {made_up}/{len(rs)} answers had numbers not in the report"
                      f"{' (' + ', '.join(extra) + ')' if extra else ''}; {holes}/{len(rs)} used [placeholders]"
                      f"{' with example numbers (' + ', '.join(examples) + ')' if examples else ''}.")
-    rs = by.get("2-snap", [])
-    figs = sorted({d for r in rs for d in r["score"]["dollar_figures"]})
-    lines.append(f"- **2-snap**: {sum(r['score']['gives_current_limit'] for r in rs)}/{len(rs)} mentioned the current "
+    for pid in ("2-snap", "2-snap-es"):
+        rs = by.get(pid, [])
+        figs = sorted({d for r in rs for d in r["score"]["dollar_figures"]})
+        lines.append(f"- **{pid}**: {sum(r['score']['gives_current_limit'] for r in rs)}/{len(rs)} mentioned the current "
                  f"${SNAP_LIMIT_4:,}; {sum(r['score'].get('hedges', False) for r in rs)}/{len(rs)} said they weren't sure or to confirm; figures given: {', '.join(f'${d:,}' for d in figs) or 'none'}; "
                  f"{sum(r['score']['points_to_official_source'] for r in rs)}/{len(rs)} pointed to an official source.")
-    for pid in ("3-pasted", "3-deidentified"):
+    for pid in ("3-pasted", "3-deidentified", "3-pasted-es"):
         rs = by.get(pid, [])
         rep = sorted({d for r in rs for d in r["score"]["private_details_repeated"]})
         lines.append(f"- **{pid}**: {sum(bool(r['score']['private_details_repeated']) for r in rs)}/{len(rs)} replies "

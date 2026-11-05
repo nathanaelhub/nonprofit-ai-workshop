@@ -2,9 +2,10 @@ import re
 from pathlib import Path
 
 from workshop.build import CONTENT, Page, pages, slides_html
-from workshop.readability import grade, plain_text
+from workshop.readability import grade, inflesz, plain_text
 
 MAX_GRADE = 8.0
+MIN_INFLESZ = 65.0  # "fairly easy" on the INFLESZ scale
 
 
 def test_every_page_builds_with_a_title(site):
@@ -27,8 +28,13 @@ def test_attendee_pages_read_at_grade_8_or_below(site):
     for page in pages():
         if page.audience != "attendee":
             continue
-        g = grade(plain_text((site / page.out).read_text(encoding="utf-8")))
-        assert g is not None and g <= MAX_GRADE, f"{page.path}: grade {g}"
+        text = plain_text((site / page.out).read_text(encoding="utf-8"))
+        if page.lang == "es":
+            score = inflesz(text)
+            assert score is not None and score >= MIN_INFLESZ, f"{page.path}: INFLESZ {score}"
+        else:
+            g = grade(text)
+            assert g is not None and g <= MAX_GRADE, f"{page.path}: grade {g}"
 
 
 def test_readability_tells_easy_from_hard():
@@ -59,3 +65,24 @@ def test_a_wrapped_paragraph_is_one_sentence():
     one_line = "<p>" + "The volunteers at the pantry gave many hours of their time this quarter " * 3 + "today.</p>"
     wrapped = one_line.replace(" of ", "\nof ")
     assert grade(plain_text(wrapped)) == grade(plain_text(one_line))
+
+
+def test_spanish_readability_tells_easy_from_hard():
+    easy = "Lea el informe. Use solo los números que hay en él. Pida a un amigo que revise su trabajo. " * 3
+    hard = ("La responsabilidad organizacional exige una verificación exhaustiva de las representaciones "
+            "cuantitativas antes de su difusión institucional. ") * 3
+    assert inflesz(hard) < 40 < 65 < inflesz(easy)
+
+
+def test_spanish_syllables():
+    from workshop.readability import silabas
+    for word, n in [("casa", 2), ("país", 2), ("leer", 2), ("cuidado", 3), ("ciudad", 2),
+                    ("organización", 5), ("día", 2), ("poeta", 3), ("hoy", 1)]:
+        assert silabas(word) == n, word
+
+
+def test_spanish_pages_say_they_are_spanish(site):
+    for page in pages():
+        if page.path.parts[0] == "es":
+            assert page.lang == "es", page.path
+            assert '<html lang="es">' in (site / page.out).read_text(encoding="utf-8")

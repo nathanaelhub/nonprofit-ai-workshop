@@ -1,0 +1,29 @@
+Este artículo trata sobre nuestros productos comerciales como Claude for Work y la Anthropic API. Para nuestros productos de consumidor como Claude Free, Pro, Max y cuando las cuentas de esos planes usan Claude Code, consulta 
+aquí
+.
+Por defecto, no utilizaremos tus entradas o salidas de nuestros productos comerciales 
+(p. ej. Claude for Work, Anthropic API, Claude Gov, etc.) 
+para entrenar nuestros modelos.
+Si explícitamente nos reportas comentarios o errores (p. ej. a través de nuestro botón de pulgar hacia arriba/abajo), o de otra manera nos autorizas a usar tus datos, entonces podemos usar tus chats y sesiones de codificación para entrenar nuestros modelos.
+Para obtener más información sobre tu uso de una oferta comercial de Anthropic, o si deseas saber cómo contactarnos respecto a un tema relacionado con privacidad, consulta nuestro 
+Centro de Confianza
+ y 
+Términos Comerciales
+.
+Comentarios
+Cuando nos proporcionas comentarios a través de nuestro botón de pulgar hacia arriba/abajo, almacenaremos toda la conversación relacionada, incluyendo cualquier contenido, estilos personalizados, preferencias de conversación o configuración del modelo, en nuestro servidor seguro durante hasta 5 años. Los datos de comentarios no incluyen contenido sin procesar de 
+conectores
+ (p. ej. Google Drive), incluyendo servidores MCP remotos y locales, aunque los datos pueden incluirse si se copian directamente en tu conversación con Claude.
+Desvinculamos tus comentarios de tus IDs de usuario y cliente antes de que Anthropic los utilice. Podemos usar tus comentarios para analizar la efectividad de nuestros servicios, realizar investigaciones, estudiar el comportamiento del usuario y entrenar nuestros modelos de IA según lo permitido por las leyes aplicables. No combinamos tus comentarios con tus otras conversaciones con Claude.
+Aquí hay un ejemplo de lo que verás al usar el botón de pulgar hacia arriba/abajo para proporcionar un reporte de comentarios desde claude.ai:
+Desactivar Comentarios
+Como Propietario Principal u Propietario de un plan Team o Enterprise, puedes desactivar la capacidad de los miembros de tu organización para enviar comentarios a Anthropic a través del botón de pulgar hacia arriba/abajo usando la configuración 
+Calificar chats
+, en Configuración de Organización > Datos y Privacidad:
+Para desactivar comentarios en Workbench, ve a Configuración -> Privacidad (solo disponible para Administradores de Org):
+Artículos relacionados
+¿Cuánto tiempo almacenas los datos de mi organización?
+¿Cómo utilizas datos personales en el entrenamiento de modelos?
+¿Cuánto tiempo almacenas mis datos?
+¿Cómo se utilizan los datos personales en el entrenamiento de modelos?
+¿Se utilizan mis datos para el entrenamiento del modelo?

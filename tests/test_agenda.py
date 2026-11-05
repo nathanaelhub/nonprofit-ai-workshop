@@ -43,3 +43,15 @@ def test_slides_the_guide_points_to_are_the_right_ones():
     slides = parse(CONTENT / "slides.md").body.split("\n---\n")
     assert "What Claude is" in slides[3] and "What it's good at" in slides[5]
     assert "slides 4 to 6" in read("facilitator.md")
+
+
+def test_spanish_handouts_match_the_english_timings_and_quiz():
+    for n, path in enumerate(["1-ask-well", "2-check", "3-protect", "4-when-not"], 1):
+        start, end, _ = next(r for r in agenda() if r[2].startswith(f"Exercise {n}"))
+        minutes = end - start
+        assert f"**{minutes} minutos." in read(f"es/handouts/{path}.md"), path
+        assert re.search(rf"\[Hoja\]\({path}\.md\) \| {minutes} \|", read("es/handouts/index.md")), path
+    blocks = re.split(r"^\*\*\d\. ", read("es/quiz.md"), flags=re.M)[1:9]
+    assert len(blocks) == 8
+    for block in blocks:
+        assert re.findall(r"^- ([A-D])\. ", block, re.M) == ["A", "B", "C", "D"]

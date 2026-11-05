@@ -4,12 +4,15 @@
   if (!slides.length) return;
   document.documentElement.classList.add("js");
   let i = Math.max(0, slides.findIndex((s) => "#" + s.id === location.hash));
+  const HELP = document.documentElement.lang === "es"
+    ? "flechas para avanzar · N para las notas"
+    : "arrows to move · N for notes";
 
   function show(n) {
     i = Math.min(slides.length - 1, Math.max(0, n));
     slides.forEach((s, k) => s.classList.toggle("current", k === i));
     history.replaceState(null, "", "#" + slides[i].id);
-    help.textContent = `${i + 1} / ${slides.length} · arrows to move · N for notes`;
+    help.textContent = `${i + 1} / ${slides.length} · ${HELP}`;
   }
 
   const help = document.createElement("div");

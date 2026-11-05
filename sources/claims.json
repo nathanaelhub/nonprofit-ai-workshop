@@ -111,5 +111,91 @@
   "says": "Claude for Work, which includes Team and Enterprise",
   "source": "anthropic_commercial_training",
   "quote": "As a Primary Owner or Owner of a Team or Enterprise plan"
+ },
+ {
+  "id": "es-snap-source-page",
+  "page": "es/handouts/2-check.md",
+  "says": "fns.usda.gov/snap/allotment/cola",
+  "source": "fns_snap_standards_fy27",
+  "quote": "Gross Monthly Income Limit (130% of Federal Poverty Level)"
+ },
+ {
+  "id": "es-tn-bbce-news",
+  "page": "es/handouts/2-check.md",
+  "says": "el Departamento de Servicios Humanos de Tennessee adoptó la elegibilidad categórica amplia (BBCE). Ese cambio sube el límite de ingreso bruto de SNAP del 130% al 200%",
+  "source": "hoodline_bbce",
+  "quote": "the Tennessee Department of Human Services has adopted broad-based categorical eligibility (BBCE). That move raises the SNAP gross-income threshold from 130% to 200%",
+  "note": "the page gives a translation, marked as translated; the quote is the English original"
+ },
+ {
+  "id": "es-tn-not-in-usda-bbce-list",
+  "page": "es/handouts/2-check.md",
+  "says": "**no** incluye a Tennessee",
+  "source": "fns_bbce_chart",
+  "quote": "States (46) | TANF/MOE Program Description",
+  "absent": "Tennessee"
+ },
+ {
+  "id": "es-consumer-training-opt-in",
+  "page": "es/privacy.md",
+  "says": "Eliges permitirnos usar tus chats y sesiones de codificación para mejorar Claude",
+  "source": "anthropic_consumer_training_es",
+  "quote": "Eliges permitirnos usar tus chats y sesiones de codificación para mejorar Claude"
+ },
+ {
+  "id": "es-consumer-5-years",
+  "page": "es/privacy.md",
+  "says": "podemos retener tus datos en un formato desidentificado hasta 5 años en nuestros pipelines de entrenamiento de modelos",
+  "source": "anthropic_consumer_retention_es",
+  "quote": "podemos retener tus datos en un formato desidentificado hasta 5 años en nuestros pipelines de entrenamiento de modelos"
+ },
+ {
+  "id": "es-delete-history",
+  "page": "es/privacy.md",
+  "says": "Se elimina de tu historial de chat inmediatamente",
+  "source": "anthropic_consumer_retention_es",
+  "quote": "Se elimina de tu historial de chat inmediatamente"
+ },
+ {
+  "id": "es-delete-30-days",
+  "page": "es/privacy.md",
+  "says": "Se borra de nuestros sistemas de almacenamiento en 30 días",
+  "source": "anthropic_consumer_retention_es",
+  "quote": "Se borra de nuestros sistemas de almacenamiento en 30 días"
+ },
+ {
+  "id": "es-incognito",
+  "page": "es/privacy.md",
+  "says": "Tus chats en modo Incógnito no se utilizan para mejorar Claude",
+  "source": "anthropic_consumer_retention_es",
+  "quote": "Tus chats en modo Incógnito no se utilizan para mejorar Claude"
+ },
+ {
+  "id": "es-commercial-default",
+  "page": "es/privacy.md",
+  "says": "Por defecto, no utilizaremos tus entradas o salidas de nuestros productos comerciales (p. ej. Claude for Work, Anthropic API, Claude Gov, etc.) para entrenar nuestros modelos",
+  "source": "anthropic_commercial_training_es",
+  "quote": "Por defecto, no utilizaremos tus entradas o salidas de nuestros productos comerciales (p. ej. Claude for Work, Anthropic API, Claude Gov, etc.) para entrenar nuestros modelos"
+ },
+ {
+  "id": "es-feedback",
+  "page": "es/privacy.md",
+  "says": "Cuando nos proporcionas comentarios a través de nuestro botón de pulgar hacia arriba/abajo, almacenaremos toda la conversación relacionada",
+  "source": "anthropic_commercial_training_es",
+  "quote": "Cuando nos proporcionas comentarios a través de nuestro botón de pulgar hacia arriba/abajo, almacenaremos toda la conversación relacionada"
+ },
+ {
+  "id": "es-feedback-5y",
+  "page": "es/privacy.md",
+  "says": "durante hasta 5 años",
+  "source": "anthropic_commercial_training_es",
+  "quote": "en nuestro servidor seguro durante hasta 5 años"
+ },
+ {
+  "id": "es-work-plan-includes-team-enterprise",
+  "page": "es/privacy.md",
+  "says": "Claude for Work, que incluye Team y Enterprise",
+  "source": "anthropic_commercial_training_es",
+  "quote": "Como Propietario Principal u Propietario de un plan Team o Enterprise"
  }
 ]

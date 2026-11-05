@@ -40,5 +40,26 @@
   "url": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training",
   "retrieved": "2026-11-03",
   "official": true
+ },
+ "anthropic_consumer_training_es": {
+  "title": "\u00bfSe utilizan mis datos para el entrenamiento del modelo? (planes de consumidor)",
+  "publisher": "Anthropic Privacy Center (Spanish)",
+  "url": "https://privacy.claude.com/es/articles/10023580-se-utilizan-mis-datos-para-el-entrenamiento-del-modelo",
+  "retrieved": "2026-11-04",
+  "official": true
+ },
+ "anthropic_consumer_retention_es": {
+  "title": "\u00bfCu\u00e1nto tiempo almacenas mis datos? (planes de consumidor)",
+  "publisher": "Anthropic Privacy Center (Spanish)",
+  "url": "https://privacy.claude.com/es/articles/10023548-cuanto-tiempo-almacenas-mis-datos",
+  "retrieved": "2026-11-04",
+  "official": true
+ },
+ "anthropic_commercial_training_es": {
+  "title": "\u00bfSe utilizan mis datos para el entrenamiento del modelo? (productos comerciales)",
+  "publisher": "Anthropic Privacy Center (Spanish)",
+  "url": "https://privacy.claude.com/es/articles/7996868-se-utilizan-mis-datos-para-el-entrenamiento-del-modelo",
+  "retrieved": "2026-11-04",
+  "official": true
  }
 }

@@ -1,0 +1,31 @@
+Este artículo trata sobre nuestros productos para consumidores como Claude Free, Pro, Max y cuándo las cuentas de esos planes usan Claude Code. Para nuestros productos comerciales como Claude for Work y la API de Anthropic, consulta 
+aquí
+.
+Usaremos tus chats y sesiones de codificación (incluyendo para mejorar nuestros modelos) si:
+Eliges permitirnos usar tus chats y sesiones de codificación para mejorar Claude, obtén más información 
+aquí
+Tus conversaciones se marcan para revisión de seguridad (en cuyo caso podemos usarlas o analizarlas para mejorar nuestra capacidad de detectar y hacer cumplir nuestra 
+Política de Uso
+, incluyendo entrenar modelos para uso de nuestro equipo de Safeguards, consistente con la misión de seguridad de Anthropic)
+Al optar explícitamente por el entrenamiento de otra manera (por ejemplo, uniéndote a nuestro Programa de Probadores de Confianza)
+Los datos de chats y sesiones de codificación que podemos usar para mejorar nuestros modelos incluyen toda la conversación relacionada, junto con cualquier contenido, estilos personalizados o preferencias de conversación, así como datos recopilados al usar 
+Claude for Chrome
+. No incluye contenido sin procesar de conectores (por ejemplo, Google Drive), incluyendo servidores MCP remotos y locales, aunque los datos pueden incluirse si se copian directamente en tu conversación con Claude.
+Chats incógnito
+Tus chats incógnito no se utilizan para mejorar Claude, incluso si has habilitado la Mejora de Modelos en tu 
+Configuración de Privacidad
+. 
+Obtén más información
+ sobre chats incógnito.
+Comentarios
+Cuando nos proporcionas comentarios a través de nuestro botón de pulgar hacia arriba/abajo, almacenaremos toda la conversación relacionada, incluyendo cualquier contenido, estilos personalizados o preferencias de conversación, en nuestro servidor seguro durante hasta 5 años. Los datos de comentarios no incluyen contenido sin procesar de 
+conectores
+ (por ejemplo, Google Drive), incluyendo servidores MCP remotos y locales, aunque los datos pueden incluirse si se copian directamente en tu conversación con Claude.
+Desvinculamos tus comentarios de tu ID de usuario (por ejemplo, dirección de correo electrónico) antes de que Anthropic los use. Podemos usar tus comentarios para analizar la efectividad de nuestros Servicios, realizar investigaciones, estudiar el comportamiento del usuario y entrenar nuestros modelos de IA según lo permitido por las leyes aplicables. No combinamos tus comentarios con tus otras conversaciones con Claude.
+Aquí hay un ejemplo de lo que verás al usar el botón de pulgar hacia arriba/abajo para proporcionar un informe de comentarios:
+Artículos relacionados
+¿Se utilizan mis datos para el entrenamiento del modelo?
+¿Cómo utilizas datos personales en el entrenamiento de modelos?
+¿Cuánto tiempo almacenas mis datos?
+¿Cómo se utilizan los datos personales en el entrenamiento de modelos?
+¿Cómo cambio mi configuración de privacidad de mejora del modelo?

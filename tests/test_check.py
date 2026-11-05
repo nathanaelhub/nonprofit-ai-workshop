@@ -56,3 +56,23 @@ def test_check_uses_the_snap_figure_the_answer_key_cites():
     from workshop.sources import claims
     says = next(c["says"] for c in claims() if c["id"] == "snap-gross-limit-4")
     assert says == f"${SNAP_LIMIT_4:,}"
+
+
+def test_spanish_check_prompts_are_the_ones_on_the_spanish_handouts():
+    from workshop.check import EMAIL_1_ES, REPORT_ES
+    assert norm(PROMPTS["1-vague-es"]) in page("es/handouts/1-ask-well.md")
+    for line in REPORT_ES.splitlines()[1:]:
+        assert norm(line) in page("es/handouts/1-ask-well.md"), line
+    assert norm(PROMPTS["2-snap-es"]) in page("es/handouts/2-check.md")
+    assert norm(EMAIL_1_ES) in page("es/handouts/3-protect.md")
+    s = score("3-pasted-es", "Hola Marisol, sentimos lo del asma de Ana.")
+    assert s["private_details_repeated"] == ["Marisol", "Ana", "asma"]
+
+
+def test_hedging_is_recognized_in_the_wording_claude_used():
+    for text in ["I believe it's around $3,575, but check that against the current USDA table.",
+                 "about $3,575/month. Please verify this figure, since I'm less sure of it.",
+                 "calculo que rondan los $3,575 al mes, pero no estoy seguro de esa cifra.",
+                 "about $3,483 ... Check the USDA or your state agency for the current number."]:
+        assert score("2-snap", text)["hedges"], text
+    assert not score("2-snap", "The limit is $3,575 a month for a household of four.")["hedges"]
